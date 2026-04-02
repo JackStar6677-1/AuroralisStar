@@ -1,6 +1,18 @@
 # AuroralisStar by Jack
 
-Fork creativo inspirado en Eclipse/BSL, retocado para tener una identidad propia con auroras mas intensas, paleta morado/dorado, menu curado y presets separados para hardware distinto.
+Fork creativo con identidad propia, retocado para tener auroras mas intensas, paleta curada, temas atmosfericos y presets separados para hardware distinto.
+
+## Creditos y base
+
+AuroralisStar no parte de cero. Este fork se apoya sobre el trabajo de shaders previos y mantiene el credito correspondiente:
+
+- Eclipse Shader, de Merlin1809:
+  https://github.com/Merlin1809/Eclipse-Shader
+- Bliss Shader, de X0nk:
+  https://github.com/X0nk/Bliss-Shader
+- Chocapic13, por la base historica citada por los proyectos upstream
+
+La idea de este repo es construir una identidad nueva sobre esa linea, no borrar su origen.
 
 ## Contenido
 
