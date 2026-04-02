@@ -1,0 +1,22 @@
+AuroralisStar by Jack - MX450
+
+Perfiles recomendados en el menu del shader:
+- `Auroralis MX450 (Objetivo 120 FPS)`
+- `Auroralis Fast (MX450)`
+
+Ajustes sugeridos para Minecraft/Iris:
+- Usa 1600x900 o 1920x1080 en pantalla completa.
+- Deja la distancia de render entre 8 y 12 chunks.
+- Deja la simulation distance entre 5 y 8 chunks.
+- Este pack mantiene `shader grass` desactivado a proposito. Los archivos de teselacion pesada fueron removidos para mejorar la estabilidad.
+
+Expectativa:
+- 120 FPS estables sigue siendo un objetivo agresivo para una MX450 con este shader.
+- Este fork esta afinado para darte la mejor oportunidad posible con look aurora morado/dorado y mejor estabilidad.
+
+Para subir la niebla rapido:
+- Entra a `AuroralisStar by Jack`.
+- Sube `Haze_amount` para mas bruma general.
+- Sube `TOD_Fog_mult` para mas niebla segun la hora del dia.
+- Sube `RainFog_amount` para tormentas mas densas.
+- Sube `CaveFogFallOff` para cuevas mas cargadas.

@@ -1,0 +1,21 @@
+AuroralisStar by Jack - RTX 4060
+
+Perfiles recomendados en el menu del shader:
+- `Auroralis RTX 4060 (Calidad Alta)`
+- `Auroralis Cinema (4060)`
+
+Ajustes sugeridos para Minecraft/Iris:
+- 1080p o 1440p deberian ir muy bien.
+- Una distancia de render entre 16 y 24 chunks es un buen punto de partida.
+- Si quieres mas impacto visual, usa `Auroralis Cinema (4060)` para empujar la identidad del fork.
+
+Expectativa:
+- Este preset apunta a una mezcla fuerte de calidad y estilo.
+- Mantiene shader grass, sombras mas ricas, LPV, nubes mas llenas y una direccion artistica morado/dorado mucho mas marcada.
+
+Para subir la niebla rapido:
+- Entra a `AuroralisStar by Jack`.
+- Sube `Haze_amount` para mas bruma general.
+- Sube `TOD_Fog_mult` para mas niebla segun la hora del dia.
+- Sube `RainFog_amount` para tormentas mas densas.
+- Sube `CaveFogFallOff` para cuevas mas cargadas.
