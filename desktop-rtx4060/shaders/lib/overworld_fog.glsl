@@ -12,6 +12,44 @@ float densityAtPosFog(in vec3 pos){
 	return mix(xy.r,xy.g, f.y);
 }
 
+float auroralisDarkFogShape(in vec3 pos){
+	vec3 samplePos = pos * vec3(1.0, 1.0 / 40.0, 1.0);
+	float swirlTime = frameTimeCounter / 40.0;
+	float radiance = 1.6 + samplePos.y / 3.0 + swirlTime;
+	mat2 rotationMatrix = mat2(vec2(cos(radiance), -sin(radiance)), vec2(sin(radiance), cos(radiance)));
+	samplePos.xz = mix(samplePos.xz * rotationMatrix, samplePos.xz, 0.35);
+
+	float noise = densityAtPosFog(samplePos * 10.0);
+	float erosion = 1.0 - densityAtPosFog((samplePos - vec3(swirlTime, 0.0, swirlTime)) * (90.0 + (1.0 - noise) * 12.0));
+	float clumpyFog = max(exp(noise * -6.0) * 1.65 - erosion * 0.32, 0.0);
+	float verticalMask = exp(-0.03 * max(pos.y, 0.0));
+
+	return clumpyFog * verticalMask;
+}
+
+float auroralisEndLikeOverworldFog(in vec3 pos){
+	float endLikeAmount = clamp((END_STORM_DENSTIY - 1.0) / 8.0, 0.0, 1.0);
+	if(endLikeAmount <= 0.0001) return 0.0;
+
+	vec3 anchoredPos = pos - vec3(0.0, FOG_START_HEIGHT + 10.0, 0.0);
+	float volumeDensity = auroralisDarkFogShape(anchoredPos);
+
+	float ceilingMask = exp(-0.02 * max(pos.y - (FOG_START_HEIGHT + 20.0), 0.0));
+	float underCanopyMask = exp(-0.01 * max((FOG_START_HEIGHT - 20.0) - pos.y, 0.0));
+	float cameraDistance = length(pos.xz - cameraPosition.xz);
+	float clearArea = 1.0 - min(max(1.0 - cameraDistance / 96.0, 0.0), 1.0);
+	float stormDensity = min(volumeDensity, mix(0.35, clearArea * clearArea * (0.6 + END_STORM_DENSTIY * 0.08), 0.55));
+	float hazeDensity = 0.002 * END_HAZE_DENSTIY * exp(-0.004 * max(pos.y - FOG_START_HEIGHT, 0.0));
+
+	#ifdef PER_BIOME_ENVIRONMENT
+		float biomeBoost = mix(1.0, 1.35, clamp(isDarkForests, 0.0, 1.0));
+	#else
+		float biomeBoost = 1.0;
+	#endif
+
+	return (stormDensity * (0.18 + 0.42 * endLikeAmount) * ceilingMask * underCanopyMask * biomeBoost) + hazeDensity * endLikeAmount;
+}
+
 
 float cloudVol(in vec3 pos, float maxDistance){
 	
@@ -48,7 +86,9 @@ float cloudVol(in vec3 pos, float maxDistance){
 
 	FogDensities(low_gradientFog, cloudyFog, maxDistance, SC_fog.x, SC_fog.y);
 
-	return uniformFog + low_gradientFog + cloudyFog + rainyFog;
+	float auroralisFog = auroralisEndLikeOverworldFog(pos);
+
+	return uniformFog + low_gradientFog + cloudyFog + rainyFog + auroralisFog;
 }
 
 float phaseRayleigh(float cosTheta) {
