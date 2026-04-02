@@ -1,7 +1,7 @@
-# Eclipse - A Bliss Edit
+# AuroralisStar by Jack
 
-Bliss is already one of the best and most feature rich shaders out there, yet I still wanted more...  
-It started out with smaller features, but then the additions just kept piling up.
+AuroralisStar by Jack is a personal fork built on top of Eclipse Shader and Bliss.  
+It started as a preset and evolved into a mood-focused fork with custom looks, denser fog, auroras, and hardware-specific variants.
 
 Notable changes/additions compared to Bliss unstable:
  + Custom moon orbit with possible eclipses
@@ -22,7 +22,7 @@ Notable changes/additions compared to Bliss unstable:
 
 Note: With default settings there is at least one guaranteed eclipse per ingame year.
 
-## Eclipses <sub>(why else would I call the shader Eclipse??)</sub>
+## Eclipses
 
 <img width="2560" height="1440" alt="2025-08-12_02 16 11" src="https://github.com/user-attachments/assets/8b2a1161-8bb5-4003-b04c-16a9c6f01494" />
 
@@ -64,7 +64,7 @@ Note: With default settings there is at least one guaranteed eclipse per ingame 
 + RRe36 and Sixthsurge, for the great ideas to steal
 ### [Want to support Xonk? Consider donating](https://ko-fi.com/xonkdev)
 
-### [You can contact me by joining Xonk's discord server and using the Eclipse channel!](https://discord.gg/8nVt56H9zH)
+### Original upstream community: [Xonk's discord server](https://discord.gg/8nVt56H9zH)
 
 
 # How to download the latest version:
