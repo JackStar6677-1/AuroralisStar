@@ -24,3 +24,4 @@ Para subir la niebla rapido:
 
 Tema sugerido:
 - `Dark Fog Forest` busca una vibra de bosque oscuro diurno, con verdes frios, niebla suspendida y menos saturacion.
+- Se ajusto para que la noche no quede tan negra: ahora la luna empuja mas luz, la niebla nocturna baja un poco y la luz minima es mas amable.
