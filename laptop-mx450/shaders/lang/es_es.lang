@@ -16,6 +16,7 @@ profile.HIGH_GRASS=§bHigh + Shader Grass
 profile.ALTERNATE_HIGH_GRASS=§bHigh + Shader Grass §7(Alt. Style)
 profile.LAPTOP_MX450=§aAuroralis MX450 §6(Objetivo 120 FPS)
 profile.AURORALIS_FAST=§dAuroralis Fast §7(MX450)
+profile.DARK_FOG_FOREST=§2Dark Fog Forest §7(Dia Bosque)
 profile.VERY_HIGH=§9Very High
 profile.ULTRA=§dUltra
 

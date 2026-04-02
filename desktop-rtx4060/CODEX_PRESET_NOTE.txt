@@ -3,6 +3,7 @@ AuroralisStar by Jack - RTX 4060
 Perfiles recomendados en el menu del shader:
 - `Auroralis RTX 4060 (Calidad Alta)`
 - `Auroralis Cinema (4060)`
+- `Dark Fog Forest (Dia Bosque)`
 
 Ajustes sugeridos para Minecraft/Iris:
 - 1080p o 1440p deberian ir muy bien.
@@ -19,3 +20,6 @@ Para subir la niebla rapido:
 - Sube `TOD_Fog_mult` para mas niebla segun la hora del dia.
 - Sube `RainFog_amount` para tormentas mas densas.
 - Sube `CaveFogFallOff` para cuevas mas cargadas.
+
+Tema sugerido:
+- `Dark Fog Forest` busca una vibra de bosque oscuro diurno, con verdes frios, niebla suspendida y menos saturacion.

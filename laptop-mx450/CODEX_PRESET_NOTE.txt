@@ -3,6 +3,7 @@ AuroralisStar by Jack - MX450
 Perfiles recomendados en el menu del shader:
 - `Auroralis MX450 (Objetivo 120 FPS)`
 - `Auroralis Fast (MX450)`
+- `Dark Fog Forest (Dia Bosque)`
 
 Ajustes sugeridos para Minecraft/Iris:
 - Usa 1600x900 o 1920x1080 en pantalla completa.
@@ -20,3 +21,6 @@ Para subir la niebla rapido:
 - Sube `TOD_Fog_mult` para mas niebla segun la hora del dia.
 - Sube `RainFog_amount` para tormentas mas densas.
 - Sube `CaveFogFallOff` para cuevas mas cargadas.
+
+Tema sugerido:
+- `Dark Fog Forest` busca una vibra de bosque oscuro diurno, con verdes frios, niebla suspendida y menos saturacion.

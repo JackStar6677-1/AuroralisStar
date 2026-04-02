@@ -16,6 +16,7 @@ profile.HIGH_GRASS=§bHigh + Shader Grass
 profile.ALTERNATE_HIGH_GRASS=§bHigh + Shader Grass §7(Alt. Style)
 profile.DESKTOP_4060=§6Auroralis RTX 4060 §d(Calidad Alta)
 profile.AURORALIS_CINEMA=§5Auroralis Cinema §6(4060)
+profile.DARK_FOG_FOREST=§2Dark Fog Forest §7(Dia Bosque)
 profile.VERY_HIGH=§9Very High
 profile.ULTRA=§dUltra
 
