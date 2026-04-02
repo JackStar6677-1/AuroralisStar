@@ -78,6 +78,48 @@ The custom `AuroralisStar by Jack` menu exposes fast-access controls for the for
 
 This makes it much easier to push the shader toward fantasy, horror forest, dreamy haze, or cleaner cinematic looks without digging through the entire original menu structure.
 
+## Recommended Loader And Mod Setup
+
+AuroralisStar should be treated primarily as an Iris-oriented shader pack.
+
+Recommended setup:
+
+- `Iris + Sodium`
+  Best default choice for most players
+- `Iris Installer`
+  Easiest way to get a working shader setup quickly
+
+Also possible:
+
+- `Oculus`
+  Useful if you specifically play on Forge and need an Iris-style shader loader there
+- `OptiFine`
+  Some shader packs in this family are designed around compatibility with OptiFine-style packs, but this fork is developed and organized with Iris in mind first
+
+Practical recommendation:
+
+- If you want the most predictable experience, use `Iris + Sodium`
+- If you are on a Forge-based modpack and need shader support, try `Oculus`
+- Do not install `OptiFine` together with `Iris`
+
+## Testing Notes
+
+For this fork, the expected testing path is:
+
+- Minecraft Java Edition
+- Iris as the primary shader loader
+- Sodium for rendering performance
+- Hardware-specific profile selection inside the shader menu
+
+When checking performance or visuals, test with:
+
+- your target resolution
+- your real render distance
+- the biome or scene you care about most
+- the exact preset you plan to use long-term
+
+The `Dark Fog Forest` preset in particular should be tested in forest-heavy biomes because its fog shaping is intentionally stronger than the general presets.
+
 ## Variants Included
 
 ### `laptop-mx450/`
