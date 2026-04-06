@@ -1,178 +1,146 @@
-# AuroralisStar by Jack
+# AuroralisStar
 
-AuroralisStar is a stylized Minecraft shader fork focused on mood, atmosphere, and identity.
+AuroralisStar es un fork experimental de shaders para Minecraft enfocado en identidad visual, atmosfera y presets ajustados para hardware concreto.
 
-Built on top of Eclipse Shader and Bliss, this project pushes the look away from the original preset feel and toward a more cinematic direction: denser fog, stronger art direction, aurora-heavy skies, curated color grading, and hardware-specific variants for both performance and quality.
+El proyecto parte de trabajo previo de la comunidad shader, pero su intencion no es ser solo una copia reempaquetada. Este repo documenta una linea de personalizacion que empuja la presentacion hacia auroras mas visibles, niebla mas dramatica, color grading mas definido y perfiles pensados para escenarios reales de uso.
 
-## What Makes AuroralisStar Different
+## Idea central del repo
 
-AuroralisStar is not just a repack.
+AuroralisStar busca responder una pregunta simple: que pasa si en lugar de usar un preset generico se construye una direccion artistica reconocible, con variantes separadas segun el equipo donde realmente se va a jugar.
 
-This fork adds its own visual direction and tuning philosophy:
+Por eso el repo esta organizado alrededor de dos ramas practicas del shader:
 
-- Stronger auroras with a purple and gold identity
-- Darker, moodier forest presentation with more atmospheric fog
-- Custom hardware-targeted variants instead of one generic pack
-- Faster access to artistic controls from the shader menu
-- Rebranded in-shader identity under `AuroralisStar by Jack`
-- Spanish-facing menu layer for the fork's visible controls
+- una variante para laptop MX450, priorizando rendimiento y estabilidad
+- una variante para desktop RTX 4060, priorizando calidad visual y atmosfera
 
-The goal is to create scenes that feel dramatic, dense, magical, and more recognizable at a glance.
+## En que se diferencia del upstream
 
-## Main Additions In This Fork
+Este fork se centra en:
 
-- `Auroralis MX450 (Objetivo 120 FPS)`
-  Performance-oriented tuning for laptops with lower graphics headroom
-- `Auroralis Fast (MX450)`
-  Lightweight stylized preset with the fork's color direction
-- `Auroralis RTX 4060 (Calidad Alta)`
-  High-quality profile for stronger desktop GPUs
-- `Auroralis Cinema (4060)`
-  More cinematic color, stronger auroras, and richer atmosphere
-- `Dark Fog Forest (Dia Bosque)`
-  A themed preset designed around dense daytime forest fog, colder greens, muted highlights, and an almost End-like enveloping haze without making the night completely black
+- auroras mas protagonistas
+- presencia mas fuerte de niebla y haze
+- bosques con un tono mas denso y cinematografico
+- perfiles artisticos mas visibles dentro del menu del shader
+- identidad de marca propia dentro del contenido del pack
+- ajustes separados por hardware en vez de un unico perfil universal
 
-## Visual Direction
+## Que contiene el repositorio
 
-AuroralisStar leans into:
+```text
+AuroralisStar/
+|-- README.md
+|-- CREDITS.md
+|-- desktop-rtx4060/
+|   |-- README.md
+|   |-- CODEX_PRESET_NOTE.txt
+|   `-- shaders/
+|-- laptop-mx450/
+|   |-- README.md
+|   |-- CODEX_PRESET_NOTE.txt
+|   `-- shaders/
+`-- _workspace_archive/
+```
 
-- Purple auroras
-- Golden torchlight and warmer highlights
-- Cooler greens in forests
-- Slightly desaturated mids for a darker fantasy tone
-- More visible haze and suspended fog in wooded areas
-- A stronger sense of separation between gameplay-focused and cinematic presets
-
-The intention is to make daytime forests feel heavy, deep, and layered instead of clean and flat.
-
-## Fog And Atmosphere Work
-
-One of the main goals of this fork is better atmosphere.
-
-AuroralisStar expands the artistic use of fog through:
-
-- Higher `Haze_amount`
-- Stronger `TOD_Fog_mult`
-- Time-of-day fog shaping
-- Rain fog and cave fog access from the custom menu
-- Lower fog start height in themed presets like `Dark Fog Forest`
-
-The `Dark Fog Forest` theme specifically was tuned to feel more enveloping, closer in spirit to the End's oppressive air volume, but adapted for the Overworld and still playable at night.
-
-## In-Shader Controls
-
-The custom `AuroralisStar by Jack` menu exposes fast-access controls for the fork's artistic identity:
-
-- Aurora settings
-- Fog controls
-- Color grading
-- Tonemapping
-- Flashlight
-- Selection box styling
-- Scene controller
-- Bloom
-- Sharpening
-- White balance
-- Saturation
-- Crosstalk
-
-This makes it much easier to push the shader toward fantasy, horror forest, dreamy haze, or cleaner cinematic looks without digging through the entire original menu structure.
-
-## Recommended Loader And Mod Setup
-
-AuroralisStar should be treated primarily as an Iris-oriented shader pack.
-
-Recommended setup:
-
-- `Iris + Sodium`
-  Best default choice for most players
-- `Iris Installer`
-  Easiest way to get a working shader setup quickly
-
-Also possible:
-
-- `Oculus`
-  Useful if you specifically play on Forge and need an Iris-style shader loader there
-- `OptiFine`
-  Some shader packs in this family are designed around compatibility with OptiFine-style packs, but this fork is developed and organized with Iris in mind first
-
-Practical recommendation:
-
-- If you want the most predictable experience, use `Iris + Sodium`
-- If you are on a Forge-based modpack and need shader support, try `Oculus`
-- Do not install `OptiFine` together with `Iris`
-
-## Testing Notes
-
-For this fork, the expected testing path is:
-
-- Minecraft Java Edition
-- Iris as the primary shader loader
-- Sodium for rendering performance
-- Hardware-specific profile selection inside the shader menu
-
-When checking performance or visuals, test with:
-
-- your target resolution
-- your real render distance
-- the biome or scene you care about most
-- the exact preset you plan to use long-term
-
-The `Dark Fog Forest` preset in particular should be tested in forest-heavy biomes because its fog shaping is intentionally stronger than the general presets.
-
-## Variants Included
+## Variantes incluidas
 
 ### `laptop-mx450/`
 
-Performance-first branch intended for systems like the MX450.
+Perfil orientado a un equipo mas limitado.
 
-Focus:
+Objetivos:
 
-- Better FPS stability
-- Lower-cost atmosphere
-- Reduced heavy features where needed
-- Retained identity of the fork without overloading weaker hardware
+- mantener buena fluidez
+- conservar la identidad visual del fork
+- limitar costo de efectos donde sea necesario
+- permitir presets estilizados sin castigar demasiado el FPS
 
 ### `desktop-rtx4060/`
 
-Higher-quality branch intended for stronger desktop GPUs like the RTX 4060.
+Perfil orientado a una GPU de escritorio mas capaz.
 
-Focus:
+Objetivos:
 
-- Denser fog
-- Better cloud presence
-- Stronger auroras
-- Higher shadow quality
-- More cinematic grading and atmosphere
+- niebla mas rica
+- auroras mas intensas
+- sombras y atmosfera mas ambiciosas
+- una lectura mas cinematografica de la escena
 
-## Language Layer
+## Contenido tecnico
 
-AuroralisStar includes a visible Spanish-facing layer for the fork's main controls and presentation so the custom profiles and menu identity feel more personal and accessible.
+Dentro de cada variante se incluyen archivos tipicos de un shader pack, entre ellos:
 
-## Credits
+- configuraciones `.properties`
+- archivos GLSL
+- menus y textos localizados
+- presets y notas de ajuste
+- subcarpetas por mundo o dimension con configuraciones especificas
 
-AuroralisStar does not erase its lineage.
+El repositorio funciona como espacio de trabajo para esas modificaciones, no solo como paquete final listo para publicar en una pagina de mods.
 
-This fork builds on:
+## Direccion artistica
 
-- Eclipse Shader by Merlin1809
-  https://github.com/Merlin1809/Eclipse-Shader
-- Bliss Shader by X0nk
-  https://github.com/X0nk/Bliss-Shader
-- Chocapic13
-  Historical shader base credited by the upstream projects
+La direccion visual del fork gira alrededor de:
 
-More attribution details are available in [CREDITS.md](./CREDITS.md).
+- auroras violetas
+- luces calidas y doradas
+- verdes mas frios en vegetacion
+- niebla mas perceptible
+- una atmosfera mas cargada y menos plana
+- separacion mas clara entre presets jugables y presets mas cinematograficos
 
-## Repository Structure
+## Uso esperado
 
-- `laptop-mx450/`
-  Laptop-focused shader variant
-- `desktop-rtx4060/`
-  Desktop-focused shader variant
+Este repo esta pensado para usuarios que:
 
-## Status
+- quieren estudiar o modificar el fork
+- quieren tomar una de las variantes como base
+- prefieren trabajar con archivos shader directamente
+- necesitan un historial de experimentos visuales y presets
 
-AuroralisStar is currently an actively customized fork focused on visual identity, atmospheric presets, and ongoing experimentation.
+## Loader recomendado
 
-This repo is the home for those changes as they keep evolving.
+La ruta recomendada para usar AuroralisStar es:
+
+- Minecraft Java Edition
+- Iris como cargador principal de shaders
+- Sodium para rendimiento
+
+Tambien puede servir como base para otras configuraciones compatibles con el ecosistema de shaders, pero el repo esta organizado con Iris en mente.
+
+## Creditos y lineage
+
+AuroralisStar mantiene visible su procedencia. El punto de partida viene de trabajo previo de la comunidad, especialmente:
+
+- Eclipse Shader de Merlin1809
+- Bliss Shader de X0nk
+- la tradicion historica de shaders que referencia a Chocapic13
+
+Los detalles estan resumidos en `CREDITS.md`.
+
+## Estado del proyecto
+
+Este repo es un fork en evolucion. No representa un shader pack “cerrado” ni congelado, sino un espacio de ajuste continuo, comparacion entre perfiles y experimentacion artistica.
+
+## Que no intenta ser
+
+- no es un repo generico de Minecraft
+- no es una recopilacion de mods
+- no es solo un zip final para instalar y olvidar
+
+Es principalmente un repositorio de trabajo para una direccion visual concreta.
+
+## Buen punto de partida para nuevos colaboradores
+
+Si quieres explorar el repo, la forma mas clara es:
+
+1. leer `CREDITS.md` para entender el origen
+2. comparar `laptop-mx450/` y `desktop-rtx4060/`
+3. revisar los `CODEX_PRESET_NOTE.txt`
+4. entrar a las carpetas `shaders/` para ver los ajustes reales
+
+## Futuro posible
+
+- mas presets tematicos por bioma o mood
+- mejor documentacion de diferencias exactas entre ambas variantes
+- empaquetado formal para distribucion
+- notas de rendimiento comparables por escena y hardware
