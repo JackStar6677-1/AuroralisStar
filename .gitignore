@@ -1,5 +1,12 @@
 *.zip
+*.7z
+*.rar
 *.bak
+*.tmp
+*.log
 Thumbs.db
 Desktop.ini
+.DS_Store
+.vscode/
+.idea/
 _workspace_archive/
