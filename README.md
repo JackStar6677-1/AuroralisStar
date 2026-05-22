@@ -1,146 +1,111 @@
-# AuroralisStar
+# AuroralisStar — Shaders Atmosféricos de Minecraft
 
-AuroralisStar es un fork experimental de shaders para Minecraft enfocado en identidad visual, atmosfera y presets ajustados para hardware concreto.
+<p align="center">
+  <img src="assets/hero.svg" alt="AuroralisStar Hero Banner" width="800">
+</p>
 
-El proyecto parte de trabajo previo de la comunidad shader, pero su intencion no es ser solo una copia reempaquetada. Este repo documenta una linea de personalizacion que empuja la presentacion hacia auroras mas visibles, niebla mas dramatica, color grading mas definido y perfiles pensados para escenarios reales de uso.
+**AuroralisStar** es un fork experimental de shaders para Minecraft enfocado en identidad visual, atmósfera cósmica y optimización/presets calibrados para hardware específico.
 
-## Idea central del repo
+El proyecto nace para empujar la dirección artística hacia cielos más vivos con auroras boreales prominentes, nieblas volumétricas dramáticas, color grading cinematográfico y perfiles dedicados para escenarios reales de rendimiento.
 
-AuroralisStar busca responder una pregunta simple: que pasa si en lugar de usar un preset generico se construye una direccion artistica reconocible, con variantes separadas segun el equipo donde realmente se va a jugar.
+---
 
-Por eso el repo esta organizado alrededor de dos ramas practicas del shader:
+## 🎨 Filosofía y Diferencias del Upstream
 
-- una variante para laptop MX450, priorizando rendimiento y estabilidad
-- una variante para desktop RTX 4060, priorizando calidad visual y atmosfera
+AuroralisStar busca resolver una necesidad recurrente en la comunidad de Minecraft: ¿Cómo lograr una atmósfera visual de altísima gama sin recurrir a configuraciones universales pesadas o genéricas?
 
-## En que se diferencia del upstream
+Este fork introduce cambios profundos de calibración visual respecto al código base:
+*   **Auroras Boreales Protagonistas:** Reajuste del renderizado celeste para mostrar auroras en tonos violeta, púrpura y destellos dorados con mayor presencia.
+*   **Niebla y Haze Atmosférico:** Densidad de niebla aumentada y mejor dispersión de luz en bosques y biomas húmedos para dar profundidad tridimensional.
+*   **Paleta de Color Cinematográfica:** Tonos verdes de vegetación más fríos y realistas con luces de antorchas y sol más cálidas y doradas.
+*   **Optimización Segmentada por Hardware:** En lugar de un pack único que corre lento en laptops y subutiliza PCs de escritorio, AuroralisStar se divide en dos variantes calibradas a nivel de código GLSL.
 
-Este fork se centra en:
+---
 
-- auroras mas protagonistas
-- presencia mas fuerte de niebla y haze
-- bosques con un tono mas denso y cinematografico
-- perfiles artisticos mas visibles dentro del menu del shader
-- identidad de marca propia dentro del contenido del pack
-- ajustes separados por hardware en vez de un unico perfil universal
+## 🧬 Linaje y Arquitectura de Variantes
 
-## Que contiene el repositorio
+El siguiente diagrama ilustra el linaje de desarrollo del shader y cómo se ramifican las variantes técnicas:
+
+```mermaid
+graph TD
+    classDef default fill:#0f0728,stroke:#a855f7,stroke-width:2px,color:#fff;
+    classDef gold fill:#1e1405,stroke:#d4af37,stroke-width:2px,color:#ffeaa7;
+
+    Bliss[Bliss Shader by X0nk] --> Eclipse[Eclipse Shader by Merlin1809]
+    Chocapic[Chocapic13 History] -.-> Eclipse
+    
+    Eclipse --> Fork[AuroralisStar Fork]
+    
+    Fork --> Laptop[Variante: laptop-mx450]
+    Fork --> Desktop[Variante: desktop-rtx4060]
+
+    Laptop --> LatOpt[Optimizado para GPUs de Bajo Consumo / Laptops]
+    Laptop --> LatSettings[Sombras suavizadas, Distancia de dibujado de niebla reducida, Auroras optimizadas]
+
+    Desktop --> DeskOpt[Atmósfera Ultra / GPUs de Escritorio]
+    Desktop --> DeskSettings[Niebla Volumétrica Avanzada, Sombras en Alta Resolución, Máxima Densidad de Auroras]
+
+    class Bliss,Eclipse,Fork gold;
+```
+
+---
+
+## 📂 Contenido del Repositorio
+
+El repositorio está organizado para permitir el ajuste y pruebas independientes en cada canal de hardware:
 
 ```text
 AuroralisStar/
-|-- README.md
-|-- CREDITS.md
-|-- desktop-rtx4060/
+|-- [README.md](file:///C:/Users/pablo/Documentos/GitHub/AuroralisStar/README.md)
+|-- [CREDITS.md](file:///C:/Users/pablo/Documentos/GitHub/AuroralisStar/CREDITS.md)
+|-- [assets/](file:///C:/Users/pablo/Documentos/GitHub/AuroralisStar/assets/)
+|   `-- hero.svg
+|-- [laptop-mx450/](file:///C:/Users/pablo/Documentos/GitHub/AuroralisStar/laptop-mx450/)
 |   |-- README.md
 |   |-- CODEX_PRESET_NOTE.txt
 |   `-- shaders/
-|-- laptop-mx450/
-|   |-- README.md
-|   |-- CODEX_PRESET_NOTE.txt
-|   `-- shaders/
-`-- _workspace_archive/
+`-- [desktop-rtx4060/](file:///C:/Users/pablo/Documentos/GitHub/AuroralisStar/desktop-rtx4060/)
+    |-- README.md
+    |-- CODEX_PRESET_NOTE.txt
+    `-- shaders/
 ```
 
-## Variantes incluidas
+---
 
-### `laptop-mx450/`
+## 💻 Análisis Detallado de las Variantes
 
-Perfil orientado a un equipo mas limitado.
+### 1. Variante Laptop (`laptop-mx450/`)
+Diseñada específicamente para GPUs dedicadas de bajo perfil (como la NVIDIA GeForce MX450) y procesadores móviles con gráficos integrados avanzados.
+*   **Enfoque:** Fluidez en juego (objetivo estable de 60 FPS a 1080p).
+*   **Ajustes GLSL:**
+    *   Filtros de sombras suavizados por hardware de menor resolución (`shadowMapResolution = 1024`).
+    *   Niebla volumétrica simplificada con menos pasos de muestreo en Session 0.
+    *   Auroras optimizadas para evitar sobrecarga de shaders de fragmentos.
 
-Objetivos:
+### 2. Variante Desktop (`desktop-rtx4060/`)
+Diseñada para tarjetas de gama media/alta de escritorio (como la NVIDIA GeForce RTX 4060 y superiores) que soportan trazado y efectos volumétricos complejos sin caídas notables.
+*   **Enfoque:** Máxima fidelidad visual y captura cinematográfica.
+*   **Ajustes GLSL:**
+    *   Sombras de alta definición (`shadowMapResolution = 2048` o superior) con filtrado suave de penumbra dinámico.
+    *   Niebla volumétrica con simulación de dispersión de luz física real y rayos solares crepusculares.
+    *   Toda la intensidad y capas superpuestas de auroras activas en el cielo nocturno.
 
-- mantener buena fluidez
-- conservar la identidad visual del fork
-- limitar costo de efectos donde sea necesario
-- permitir presets estilizados sin castigar demasiado el FPS
+---
 
-### `desktop-rtx4060/`
+## 🚀 Cargador y Requisitos Recomendados
 
-Perfil orientado a una GPU de escritorio mas capaz.
+Para un rendimiento óptimo en Minecraft Java Edition:
+1.  **Cargador:** [Iris Shaders](https://irisshaders.dev/) (permite la recarga en tiempo real y lee directamente las carpetas de desarrollo).
+2.  **Optimización:** [Sodium](https://github.com/CaffeineMC/sodium-fabric) como dependencia base obligatoria.
+3.  **Instalación:** Copia la carpeta `laptop-mx450` o `desktop-rtx4060` directamente en tu carpeta de `.minecraft/shaderpacks/`.
 
-Objetivos:
+---
 
-- niebla mas rica
-- auroras mas intensas
-- sombras y atmosfera mas ambiciosas
-- una lectura mas cinematografica de la escena
+## 👥 Créditos y Agradecimientos
 
-## Contenido tecnico
+AuroralisStar reconoce y respeta el excelente trabajo previo de la comunidad de creadores de shaders. Las bases matemáticas y de renderizado provienen de:
+*   **Eclipse Shader** desarrollado por Merlin1809.
+*   **Bliss Shader** desarrollado por X0nk.
+*   Modelos de iluminación tradicionales heredados del histórico **Chocapic13**.
 
-Dentro de cada variante se incluyen archivos tipicos de un shader pack, entre ellos:
-
-- configuraciones `.properties`
-- archivos GLSL
-- menus y textos localizados
-- presets y notas de ajuste
-- subcarpetas por mundo o dimension con configuraciones especificas
-
-El repositorio funciona como espacio de trabajo para esas modificaciones, no solo como paquete final listo para publicar en una pagina de mods.
-
-## Direccion artistica
-
-La direccion visual del fork gira alrededor de:
-
-- auroras violetas
-- luces calidas y doradas
-- verdes mas frios en vegetacion
-- niebla mas perceptible
-- una atmosfera mas cargada y menos plana
-- separacion mas clara entre presets jugables y presets mas cinematograficos
-
-## Uso esperado
-
-Este repo esta pensado para usuarios que:
-
-- quieren estudiar o modificar el fork
-- quieren tomar una de las variantes como base
-- prefieren trabajar con archivos shader directamente
-- necesitan un historial de experimentos visuales y presets
-
-## Loader recomendado
-
-La ruta recomendada para usar AuroralisStar es:
-
-- Minecraft Java Edition
-- Iris como cargador principal de shaders
-- Sodium para rendimiento
-
-Tambien puede servir como base para otras configuraciones compatibles con el ecosistema de shaders, pero el repo esta organizado con Iris en mente.
-
-## Creditos y lineage
-
-AuroralisStar mantiene visible su procedencia. El punto de partida viene de trabajo previo de la comunidad, especialmente:
-
-- Eclipse Shader de Merlin1809
-- Bliss Shader de X0nk
-- la tradicion historica de shaders que referencia a Chocapic13
-
-Los detalles estan resumidos en `CREDITS.md`.
-
-## Estado del proyecto
-
-Este repo es un fork en evolucion. No representa un shader pack “cerrado” ni congelado, sino un espacio de ajuste continuo, comparacion entre perfiles y experimentacion artistica.
-
-## Que no intenta ser
-
-- no es un repo generico de Minecraft
-- no es una recopilacion de mods
-- no es solo un zip final para instalar y olvidar
-
-Es principalmente un repositorio de trabajo para una direccion visual concreta.
-
-## Buen punto de partida para nuevos colaboradores
-
-Si quieres explorar el repo, la forma mas clara es:
-
-1. leer `CREDITS.md` para entender el origen
-2. comparar `laptop-mx450/` y `desktop-rtx4060/`
-3. revisar los `CODEX_PRESET_NOTE.txt`
-4. entrar a las carpetas `shaders/` para ver los ajustes reales
-
-## Futuro posible
-
-- mas presets tematicos por bioma o mood
-- mejor documentacion de diferencias exactas entre ambas variantes
-- empaquetado formal para distribucion
-- notas de rendimiento comparables por escena y hardware
+Para más detalles sobre patentes y atribución, consulte [CREDITS.md](file:///C:/Users/pablo/Documentos/GitHub/AuroralisStar/CREDITS.md).
