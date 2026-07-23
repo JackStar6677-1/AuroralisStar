@@ -109,3 +109,5 @@ AuroralisStar reconoce y respeta el excelente trabajo previo de la comunidad de 
 *   Modelos de iluminación tradicionales heredados del histórico **Chocapic13**.
 
 Para más detalles sobre patentes y atribución, consulte [CREDITS.md](file:///C:/Users/pablo/Documentos/GitHub/AuroralisStar/CREDITS.md).
+
+<!-- Updated for 2026 active baseline maintenance -->
