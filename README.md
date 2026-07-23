@@ -76,7 +76,7 @@ AuroralisStar/
 
 ### 1. Variante Laptop (`laptop-mx450/`)
 Diseñada específicamente para GPUs dedicadas de bajo perfil (como la NVIDIA GeForce MX450) y procesadores móviles con gráficos integrados avanzados.
-*   **Enfoque:** Fluidez en juego (objetivo estable de 60 FPS a 1080p).
+*   **Focus:** Fluidez en juego (objetivo estable de 60 FPS a 1080p).
 *   **Ajustes GLSL:**
     *   Filtros de sombras suavizados por hardware de menor resolución (`shadowMapResolution = 1024`).
     *   Niebla volumétrica simplificada con menos pasos de muestreo en Session 0.
@@ -84,7 +84,7 @@ Diseñada específicamente para GPUs dedicadas de bajo perfil (como la NVIDIA Ge
 
 ### 2. Variante Desktop (`desktop-rtx4060/`)
 Diseñada para tarjetas de gama media/alta de escritorio (como la NVIDIA GeForce RTX 4060 y superiores) que soportan trazado y efectos volumétricos complejos sin caídas notables.
-*   **Enfoque:** Máxima fidelidad visual y captura cinematográfica.
+*   **Focus:** Máxima fidelidad visual y captura cinematográfica.
 *   **Ajustes GLSL:**
     *   Sombras de alta definición (`shadowMapResolution = 2048` o superior) con filtrado suave de penumbra dinámico.
     *   Niebla volumétrica con simulación de dispersión de luz física real y rayos solares crepusculares.
