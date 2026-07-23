@@ -12,7 +12,7 @@ El proyecto nace para empujar la dirección artística hacia cielos más vivos c
 
 ## 🎨 Filosofía y Diferencias del Upstream
 
-AuroralisStar busca resolver una necesidad recurrente en la comunidad de Minecraft: ¿Cómo lograr una atmósfera visual de altísima gama sin recurrir a configuraciones universales pesadas o genéricas?
+AuroralisStar busca resolver una necesidad recurrente en la comunidad de Minecraft: ¿Cómo lograr una atmósfera visual de altísima gama sin recurrir a configurations universales pesadas o genéricas?
 
 Este fork introduce cambios profundos de calibración visual respecto al código base:
 *   **Auroras Boreales Protagonistas:** Reajuste del renderizado celeste para mostrar auroras en tonos violeta, púrpura y destellos dorados con mayor presencia.
@@ -76,7 +76,7 @@ AuroralisStar/
 
 ### 1. Variante Laptop (`laptop-mx450/`)
 Diseñada específicamente para GPUs dedicadas de bajo perfil (como la NVIDIA GeForce MX450) y procesadores móviles con gráficos integrados avanzados.
-*   **Focus:** Fluidez en juego (objetivo estable de 60 FPS a 1080p).
+*   **Enfoque:** Fluidez en juego (objetivo estable de 60 FPS a 1080p).
 *   **Ajustes GLSL:**
     *   Filtros de sombras suavizados por hardware de menor resolución (`shadowMapResolution = 1024`).
     *   Niebla volumétrica simplificada con menos pasos de muestreo en Session 0.
@@ -84,7 +84,7 @@ Diseñada específicamente para GPUs dedicadas de bajo perfil (como la NVIDIA Ge
 
 ### 2. Variante Desktop (`desktop-rtx4060/`)
 Diseñada para tarjetas de gama media/alta de escritorio (como la NVIDIA GeForce RTX 4060 y superiores) que soportan trazado y efectos volumétricos complejos sin caídas notables.
-*   **Focus:** Máxima fidelidad visual y captura cinematográfica.
+*   **Enfoque:** Máxima fidelidad visual y captura cinematográfica.
 *   **Ajustes GLSL:**
     *   Sombras de alta definición (`shadowMapResolution = 2048` o superior) con filtrado suave de penumbra dinámico.
     *   Niebla volumétrica con simulación de dispersión de luz física real y rayos solares crepusculares.
@@ -95,9 +95,9 @@ Diseñada para tarjetas de gama media/alta de escritorio (como la NVIDIA GeForce
 ## 🚀 Cargador y Requisitos Recomendados
 
 Para un rendimiento óptimo en Minecraft Java Edition:
-1.  **Cargador:** [Iris Shaders](https://irisshaders.dev/) (permite la recarga en tiempo real y lee directamente las carpetas de desarrollo).
+1.  **Cargador:** [Iris Shaders](https://irisshaders.dev/) (permite la recarga en tiempo real y lee directamente las folders de desarrollo).
 2.  **Optimización:** [Sodium](https://github.com/CaffeineMC/sodium-fabric) como dependencia base obligatoria.
-3.  **Instalación:** Copia la carpeta `laptop-mx450` o `desktop-rtx4060` directamente en tu carpeta de `.minecraft/shaderpacks/`.
+3.  **Instalación:** Copia la folder `laptop-mx450` o `desktop-rtx4060` directamente en tu folder de `.minecraft/shaderpacks/`.
 
 ---
 
